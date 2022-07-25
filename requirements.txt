@@ -1,0 +1,8 @@
+lit
+numpy
+onnx==1.11.0
+protobuf==3.16.0
+pybind11
+pytest
+pytest-xdist
+wheel
