@@ -10,13 +10,19 @@ if (NOT DEFINED MLIR_DIR)
     )
 endif()
 
-find_package(MLIR REQUIRED CONFIG)
+option(MHLO_BUILD_EMBEDDED "Build ONNX as part of another project" OFF)
 
-message(STATUS "Using MLIRConfig.cmake in: ${MLIR_DIR}")
-message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+if(NOT ONNX_EMBEDDED_BUILD)
+  find_package(MLIR REQUIRED CONFIG)
 
-list(APPEND CMAKE_MODULE_PATH "${MLIR_CMAKE_DIR}")
-list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
+  message(STATUS "Using MLIRConfig.cmake in: ${MLIR_DIR}")
+  message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
+  list(APPEND CMAKE_MODULE_PATH "${MLIR_CMAKE_DIR}")
+  list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
+else()
+  message(STATUS "Building onnx-mlir embedded externally")
+endif()
 
 include(TableGen)
 include(AddLLVM)
