@@ -26,11 +26,14 @@ cmake -G Ninja ../llvm \
    -DLLVM_TARGETS_TO_BUILD="host" \
    -DCMAKE_BUILD_TYPE=Release \
    -DLLVM_ENABLE_ASSERTIONS=ON \
-   -DLLVM_ENABLE_RTTI=ON
+   -DLLVM_ENABLE_RTTI=ON \
+   -DMLIR_ENABLE_BINDINGS_PYTHON=ON
 
 cmake --build . -- ${MAKEFLAGS}
 cmake --build . --target check-mlir
 ```
+
+If building onnx-mlir with `ONNX_MLIR_ENABLE_TORCH=OFF`, then `MLIR_ENABLE_BINDINGS_PYTHON` is not needed.
 
 ## ONNX-MLIR (this project)
 
