@@ -148,6 +148,10 @@ add_subdirectory(third_party/pybind11)
 add_subdirectory(third_party/rapidcheck)
 add_subdirectory(third_party/mlir-hlo EXCLUDE_FROM_ALL)
 
+set(TORCH_MLIR_ENABLE_MHLO OFF)
+set(TORCH_MLIR_OOT_BUILD ON)
+add_subdirectory(third_party/torch-mlir EXCLUDE_FROM_ALL)
+
 if (NOT TARGET benchmark)
   set(BENCHMARK_USE_BUNDLED_GTEST OFF)
   set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
