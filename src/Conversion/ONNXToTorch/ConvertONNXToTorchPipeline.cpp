@@ -20,7 +20,7 @@ namespace onnx_mlir {
 
 void registerONNXFrontendToTorchBackendPasses() {
   PassPipelineRegistration<>(
-    "onnx-to-torch-pipeline",
+    "convert-onnx-to-torch-pipeline",
     "Pipeline converting ONNX to Torch dialect.",
     onnx_mlir::createONNXFrontendToTorchBackendPasses
   );
