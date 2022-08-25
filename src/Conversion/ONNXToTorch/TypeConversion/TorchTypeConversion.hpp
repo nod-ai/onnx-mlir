@@ -1,11 +1,17 @@
-//===------------------------------------------------------------*- C++ -*-===//
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//====----- TorchTypeConversion.hpp - ONNX types to Torch types conversion ---------===//
 //
-// This file is licensed under the Apache License v2.0 with LLVM Exceptions.
-// See https://llvm.org/LICENSE.txt for license information.
-// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-// Also available under a BSD-style license. See LICENSE.
+// Copyright 2019-2022 The IBM Research Authors.
 //
-//===----------------------------------------------------------------------===//
+// ======================================================================================
+//
+// This file contains code to setup type conversions from ONNX types (builtin)
+// to Torch types (e.g. torch.tensor)
+//
+//===-------------------------------------------------------------------------------===//
 
 #ifndef ONNXMLIR_DIALECT_TORCHTYPECONVERSION_H
 #define ONNXMLIR_DIALECT_TORCHTYPECONVERSION_H

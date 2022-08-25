@@ -2,15 +2,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//===---------------- Elementwise.cpp - Elementwise Ops -------------------===//
+//===---------------- Constant.cpp - ONNXConstantOp -------------------===//
 //
 // Copyright 2019-2022 The IBM Research Authors.
 //
-// =============================================================================
+// =========================================================================
 //
-// This file lowers ONNX element-wise operators to Mhlo dialect.
+// This file lowers ONNXConstantOp to Torch::NonValueTensorLiteralOp
 //
-//===----------------------------------------------------------------------===//
+//===------------------------------------------------------------------===//
 
 #include "src/Conversion/ONNXToTorch/ONNXToTorchCommon.hpp"
 

@@ -2,16 +2,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//====------ ONNXToMhloCommon.hpp - ONNX dialects to Mhlo lowering --------===//
+//====------ ONNXToTorchCommon.hpp - ONNX dialects to Torch lowering --------===//
 //
 // Copyright 2019-2022 The IBM Research Authors.
 //
-// =============================================================================
+// ===============================================================================
 //
 // This file contains common code shared by the functions performing the
-// lowering to the Mhlo dialect.
+// lowering to the Torch dialect.
 //
-//===----------------------------------------------------------------------===//
+//===------------------------------------------------------------------------===//
 
 #include "mlir/Dialect/Affine/IR/AffineOps.h"
 #include "mlir/Dialect/Linalg/IR/Linalg.h"
@@ -35,14 +35,10 @@
 #include "src/Transform/ONNX/ConstPropHelper.hpp"
 #include "src/Conversion/ONNXToTorch/TypeConversion/TorchTypeConversion.hpp"
 
-//===----------------------------------------------------------------------===//
-// Functions to add lowering patterns for frontend operations.
-//===----------------------------------------------------------------------===//
-
 namespace onnx_mlir {
 
 //===----------------------------------------------------------------------===//
-// Common functions used when lowering the ONNX frontend dialect to torch-mlir.
+// Functions for populating the conversion patterns for the lowerings.
 //===----------------------------------------------------------------------===//
 
 // `Math` directory methods:

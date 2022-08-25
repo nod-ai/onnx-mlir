@@ -1,11 +1,13 @@
-//===- RefineFuncValueSemantics.cpp ------------------------------*- C++-*-===//
+//====----- RefineFuncValueSemantics.cpp - ONNX dialects to Torch lowering ---------===//
 //
-// This file is licensed under the Apache License v2.0 with LLVM Exceptions.
-// See https://llvm.org/LICENSE.txt for license information.
-// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-// Also available under a BSD-style license. See LICENSE.
+// Copyright 2019-2022 The IBM Research Authors.
 //
-//===----------------------------------------------------------------------===//
+// =====================================================================================
+//
+// This file implements a pass for promoting tensors of functions without uses to
+// have value semantics.
+//
+//===-------------------------------------------------------------------------------===//
 
 #include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/IR/Builders.h"

@@ -2,16 +2,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//====----- ONNXToMhloCommon.cpp - ONNX dialects to Mhlo lowering ---------===//
+//====----- ONNXToTorchCommon.cpp - ONNX dialects to Torch lowering ---------===//
 //
 // Copyright 2019-2022 The IBM Research Authors.
 //
-// =============================================================================
+// ===============================================================================
 //
 // This file contains common code shared by the functions performing the
-// lowering to the MHLO dialect.
+// lowering to the Torch backend dialect.
 //
-//===----------------------------------------------------------------------===//
+//===------------------------------------------------------------------------===//
 
 #include "src/Conversion/ONNXToTorch/ONNXToTorchCommon.hpp"
 

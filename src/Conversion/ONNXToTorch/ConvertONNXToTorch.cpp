@@ -2,16 +2,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//====------ ConvertONNXToMhlo.cpp - ONNX dialects to Mhlo lowering -------===//
+//====------ ConvertONNXToTorch.cpp - ONNX dialects to Torch lowering -------===//
 //
 // Copyright 2019-2022 The IBM Research Authors.
 //
-// =============================================================================
+// ===============================================================================
 //
-// This file implements the lowering of frontend operations to a combination of
-// Mhlo IR and standard operations.
+// This file implements the lowering of frontend operations to Torch backend IR.
 //
-//===----------------------------------------------------------------------===//
+//===------------------------------------------------------------------------===//
 
 #include "src/Conversion/ONNXToTorch/ONNXToTorchCommon.hpp"
 

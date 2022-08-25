@@ -1,11 +1,17 @@
-//===----------------------------------------------------------------------===//
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//====----- TorchTypeConversionPasses.cpp - ONNX types to Torch types conversion passes ---------===//
 //
-// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
-// See https://llvm.org/LICENSE.txt for license information.
-// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-// Also available under a BSD-style license. See LICENSE.
+// Copyright 2019-2022 The IBM Research Authors.
 //
-//===----------------------------------------------------------------------===//
+// ===================================================================================================
+//
+// This file defines additional passes for finishing the function type conversion as well as
+// finalizing the type conversion to Torch types.
+//
+//===--------------------------------------------------------------------------------------------===//
 
 #include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/Dialect/Func/Transforms/FuncConversions.h"

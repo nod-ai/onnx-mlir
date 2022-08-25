@@ -1,11 +1,17 @@
-//===- EraseModuleInitializer.cpp --------------------------------*- C++-*-===//
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//====----- EraseModuleInitializer.cpp - ONNX dialects to Torch lowering ---------===//
 //
-// This file is licensed under the Apache License v2.0 with LLVM Exceptions.
-// See https://llvm.org/LICENSE.txt for license information.
-// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-// Also available under a BSD-style license. See LICENSE.
+// Copyright 2019-2022 The IBM Research Authors.
 //
-//===----------------------------------------------------------------------===//
+// ====================================================================================
+//
+// This file implements a pass for removing the ONNXEntryPointOp for compatibility
+// when converting to Torch backend IR.
+//
+//===------------------------------------------------------------------------------===//
 
 #include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/IR/BlockAndValueMapping.h"

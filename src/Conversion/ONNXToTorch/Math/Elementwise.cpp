@@ -8,7 +8,7 @@
 //
 // =============================================================================
 //
-// This file lowers ONNX element-wise operators to Mhlo dialect.
+// This file lowers ONNX element-wise operators to Torch dialect.
 //
 //===----------------------------------------------------------------------===//
 
@@ -20,6 +20,8 @@ using namespace mlir::torch;
 namespace onnx_mlir {
 
 namespace {
+
+// AtenAddOp requires an additional alpha parameter and thus requires a unique lowering
 class ConvertONNXAddOp : public OpConversionPattern<ONNXAddOp> {
 public:
   using OpConversionPattern::OpConversionPattern;
