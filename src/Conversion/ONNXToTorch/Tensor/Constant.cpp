@@ -30,7 +30,7 @@ public:
       return rewriter.notifyMatchFailure(op, "unimplemented: non-dense values are unsupported");
     ElementsAttr value = adaptor.valueAttr();
     auto newResultType = getTypeConverter()->convertType(op.getResult().getType());
-    rewriter.replaceOpWithNewOp<Torch::NonValueTensorLiteralOp>(op, newResultType, value);
+    rewriter.replaceOpWithNewOp<Torch::ValueTensorLiteralOp>(op, newResultType, value);
     return success();
   }
 };

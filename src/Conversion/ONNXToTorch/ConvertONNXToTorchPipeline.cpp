@@ -32,7 +32,6 @@ void createONNXFrontendToTorchBackendPasses(
   pm.addPass(createFuncTorchTypeConversionPass());
   pm.addPass(createFinalizingTorchTypeConversionPass());
   pm.addPass(createEraseONNXEntryPointPass());
-  pm.addPass(createRefineFuncValueSemanticsPass());
 }
 
 } // namespace onnx_mlir

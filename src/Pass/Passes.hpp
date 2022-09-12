@@ -67,7 +67,6 @@ std::unique_ptr<mlir::Pass> createLowerToTorchPass();
 std::unique_ptr<mlir::Pass> createFuncTorchTypeConversionPass();
 std::unique_ptr<mlir::Pass> createFinalizingTorchTypeConversionPass();
 std::unique_ptr<mlir::Pass> createEraseONNXEntryPointPass();
-std::unique_ptr<mlir::Pass> createRefineFuncValueSemanticsPass();
 
 /// Pass for lowering krnl.dim operations to standard dialect.
 std::unique_ptr<mlir::Pass> createDisconnectKrnlDimFromAllocPass();

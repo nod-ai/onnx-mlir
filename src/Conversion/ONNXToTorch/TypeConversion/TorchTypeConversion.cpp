@@ -27,24 +27,24 @@ void onnx_mlir::getTorchTypeConversionDependentDialects(
 // Type conversion setup.
 //===----------------------------------------------------------------------===//
 
-static torch::Torch::NonValueTensorType getNonValueTensorFromBuiltinTensor(TensorType type) {
+static torch::Torch::ValueTensorType getValueTensorFromBuiltinTensor(TensorType type) {
   auto context = type.getContext();
   if (type.isa<RankedTensorType>()) {
-    return torch::Torch::NonValueTensorType::get(context, type.getShape(), type.getElementType());
+    return torch::Torch::ValueTensorType::get(context, type.getShape(), type.getElementType());
   }
-  return torch::Torch::NonValueTensorType::get(context, None, type.getElementType());
+  return torch::Torch::ValueTensorType::get(context, None, type.getElementType());
 }
 
 static void
-setupTensorToNonValueTensorConversion(ConversionTarget &target,
+setupTensorToValueTensorConversion(ConversionTarget &target,
                                           TypeConverter &typeConverter) {
   target.addLegalOp<UnrealizedConversionCastOp>();
   typeConverter.addConversion(
       [](TensorType type) -> Optional<Type> {
-        return getNonValueTensorFromBuiltinTensor(type);
+        return getValueTensorFromBuiltinTensor(type);
       });
   typeConverter.addTargetMaterialization([](OpBuilder &builder,
-                                            Torch::NonValueTensorType type,
+                                            Torch::ValueTensorType type,
                                             ValueRange inputs,
                                             Location loc) -> Value {
     assert(inputs.size() == 1);
@@ -63,5 +63,5 @@ setupTensorToNonValueTensorConversion(ConversionTarget &target,
 
 void onnx_mlir::setupTorchTypeConversion(
     ConversionTarget &target, TypeConverter &typeConverter) {
-  setupTensorToNonValueTensorConversion(target, typeConverter);
+  setupTensorToValueTensorConversion(target, typeConverter);
 }

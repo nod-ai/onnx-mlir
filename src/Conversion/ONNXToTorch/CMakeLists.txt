@@ -12,7 +12,6 @@ add_onnx_mlir_library(OMONNXToTorch
   ConvertONNXToTorchPipeline.cpp
   EraseONNXEntryPoint.cpp
   ONNXToTorchCommon.cpp
-  RefineFuncValueSemantics.cpp
   TypeConversion/TorchTypeConversion.cpp
   TypeConversion/TorchTypeConversionPasses.cpp
 
